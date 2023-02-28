@@ -52,7 +52,7 @@
                 Swal.fire({
                     title:'Success',
                     icon: 'success',
-                    confirmButtonText:'<a style="color:#fff" href="index.php">OK</a>',
+                    confirmButtonText:'<button style="color:white" href="index.php">OK</button>',
                     text: '<?php echo $message; ?>',
                       })
                     })

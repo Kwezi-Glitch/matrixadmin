@@ -126,8 +126,8 @@ class Registration
 
                 if ($query_new_user_insert) {
                     $this->registration_successful = true;
-                    // $this->messages[] = MESSAGE_REGISTRATION_ACTIVATION_SUCCESSFUL;
-                    $this->messages[]=2;
+                    $this->messages[] = MESSAGE_REGISTRATION_ACTIVATION_SUCCESSFUL;
+                    // $this->messages[]=2;
                 } else {
                     $this->errors[] = MESSAGE_REGISTRATION_FAILED;
                 }
@@ -144,9 +144,9 @@ class Registration
         $mail->FromName=EMAIL_VERIFICATION_FROM_NAME;
         $mail->Subject=EMAIL_VERIFICATION_SUBJECT;
         $mail->AddAddress($user_email);
-        $linkEMAIL_VERIFICATION_URL .'?id='.$user_id,'&verification_code='.$user_activation_hash;
+        // $linkEMAIL_VERIFICATION_URL .'?id='.$user_id,'&verification_code='.$user_activation_hash;
 
-        $mail->Body=EMAIL_VERIFICATION_CONTENT .' '$link;
+        // $mail->Body=EMAIL_VERIFICATION_CONTENT .' '$link;
 
         if(!$mail->Send()){
             $this->errors[]=MESSAGE_VERIFICATION_EMAIL_NOT_SENT;

@@ -63,7 +63,33 @@
     <script src="js/matrix.login.js"></script>
 
     <!-- setting up sweet alert messages display -->
-    
+    <?php if(isset($Registration->messages)): ?>
+        <?php foreach($Registration->messages as $message) : ?>
+            <script> $(document).ready(function(){
+                Swal.fire({
+                    title:'Success',
+                    icon: 'success',
+                    confirmButtonText:'<a href="index.php">OK</a>',
+                    text: '<?php echo $message; ?>',
+                      })
+                    })
+             </script>
+                <?php endforeach ?>
+                <?php endif ?>
+
+                <?php if(isset($Registration->errors)): ?>
+        <?php foreach($Registration->errors as $error) : ?>
+            <script> $(document).ready(function(){
+                Swal.fire({
+                    title:'Opps, something wrong...',
+                    icon: 'error',
+                    text: '<?php echo $error; ?>',
+                      })
+                    })
+             </script>
+                <?php endforeach ?>
+                <?php endif ?>
+
 </body>
 
 </html>
